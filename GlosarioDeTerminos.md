@@ -19,3 +19,10 @@ o PreparedStatement.ResultSet se utilizan para almacenar los resultados que obte
 consulta a la base de datos. En otras palabra, una vez que se ejecutala consulta, la base de datos devuelve
 un conjunto de datos que pueden ser leídos y monipulados en Java a  través del objeto "ResultSet".
 
+### Métodos con firma "throw Exception":
+La palabra clave throws Exception se utiliza para declarar que un método puede lanzar una excepción de un determinado tipo.
+Al incluir throws Exception en la firma de un método, estás indicando que este método puede generar una excepción
+de cualquier tipo que herede de la clase Exception.
+La palabra clave throws se utiliza para declarar que un método puede lanzar una excepción de un determinado tipo, 
+y su inclusión en la firma de un método es importante para que otros métodos que lo invoquen puedan manejar adecuadamente
+las excepciones que pueda generar.

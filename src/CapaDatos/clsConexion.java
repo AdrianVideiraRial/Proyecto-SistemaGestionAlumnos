@@ -38,6 +38,7 @@ public class clsConexion { //En esta clase crearemos la conexion con la base de 
     public void desconectarBD(){
         try{
             conexion.close(); // Usamos el metodo .close() de la clase Connection en nuestro objeto "conexion" para desconectarnos de la BD.
+            System.out.println("Desconexión efectuada con éxito");
         } catch (Exception e){
             System.out.println("Error en el método desconectarBD"); // Mostramos un mensaje en caso de que algo no funcione.
         }
@@ -45,9 +46,9 @@ public class clsConexion { //En esta clase crearemos la conexion con la base de 
 
     //Método para consultarle a la BD.
     public ResultSet consultarBD(String sentencia) throws Exception {//La Interfaz ResultSet nos permite movernos por las tablas de la BD.
-        try {
+        try { //throws Exception: indica que este método debe manejar errores de la clase Exception.
             conectarBD(); // Nos conectamos a la base de datos para poder hacer la consulta con el método que hemos creado.
-            pt = conexion.prepareStatement(sentencia); // Usamos la interfaz PreparedStatement para realizar la consulta.
+            pt = conexion.prepareStatement(sentencia); // Usamos el Objeto de la interfaz PreparedStatement para realizar la consulta.
             System.out.println(pt); // Mostramos la consulta por pantalla para poder checkearla.
             return pt.executeQuery();//Usamos este método para que ejecute la consulta.
         }catch (Exception e){
@@ -56,6 +57,21 @@ public class clsConexion { //En esta clase crearemos la conexion con la base de 
             conexion.close(); // Cerramos la conexión en PostgreSQL.(Optimizamos los recursos del sitema).
         }
     }
+
+    //Método para operaciones CRUD de la BD.
+    public void ejecutarBD(String sentencia) throws Exception { // Hacemos este método void ya que no necesitamos retornar nada, solo queremos manipular la BD.
+        try{ //throws Exception: indica que este método debe manejar errores de la clase Exception.
+            conectarBD(); // Nos conectamos a la base de datos para poder hacer la consulta con el método que hemos creado.
+            pt = conexion.prepareStatement(sentencia);// Usamos el Objeto de la interfaz PreparedStatement para realizar la consulta.
+            pt.executeUpdate();//Este método es el que nos permite ejecutar ordenes CRUD en la base de datos.
+        } catch (Exception e){
+            throw new Exception("Error al ejecutar la Base de datos");
+        } finally { // Este bloque de código "finally" se ejecutará siempre pase lo que pase.
+            conexion.close(); // Cerramos la conexión en PostgreSQL.(Optimizamos los recursos del sitema).
+        }
+    }
+
+
 
 
 
