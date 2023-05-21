@@ -1,0 +1,46 @@
+CREATE TABLE public.clases (
+    nombre_clase VARCHAR(15) PRIMARY KEY
+);
+
+CREATE TABLE public.materias (
+    nombre_materia VARCHAR(35) PRIMARY KEY
+);
+
+CREATE TABLE public.alumnos (
+    dni NUMERIC(8) PRIMARY KEY,
+    nombre_alumno VARCHAR(15) NOT NULL,
+    apellido_alumno VARCHAR (30) NOT NULL,
+    fecha_nacimiento DATE NOT NULL,
+    direccion VARCHAR(50) NOT NULL,
+    telefono NUMERIC(9)
+);
+
+CREATE TABLE public.profesores (
+    id_profesor NUMERIC(3) PRIMARY KEY,
+    nombre_profesor VARCHAR(15) NOT NULL,
+    apellido_profesor VARCHAR (30) NOT NULL,
+    email VARCHAR(30),
+    movil NUMERIC(9),
+    contraseña NUMERIC(6)
+    estado BOOLEAN (TRUE);
+);
+
+
+CREATE TABLE public.informacion_general (
+    identificador_general SERIAL PRIMARY KEY,
+    nombre_clase VARCHAR(15),
+    nombre_alumno VARCHAR(15),
+    apellido_alumno VARCHAR (30),
+    dni NUMERIC(8),
+    nombre_materia VARCHAR(35),
+    examen_1 INTEGER,
+    examen_2 INTEGER,
+    examen_3 INTEGER,
+    media INTEGER,
+    nombre_profesor VARCHAR(15),
+    id_profesor NUMERIC(3),
+	constraint fk_nombre_clase foreign key (nombre_clase) references clases(nombre_clase),
+	constraint fk_dni foreign key (dni) references alumnos(dni),
+	constraint fk_nombre_materia foreign key (nombre_materia) references materias(nombre_materia),
+	constraint fk_id_profesor foreign key (id_profesor) references profesores(id_profesor)
+);

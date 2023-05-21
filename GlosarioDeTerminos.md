@@ -26,3 +26,11 @@ de cualquier tipo que herede de la clase Exception.
 La palabra clave throws se utiliza para declarar que un método puede lanzar una excepción de un determinado tipo, 
 y su inclusión en la firma de un método es importante para que otros métodos que lo invoquen puedan manejar adecuadamente
 las excepciones que pueda generar.
+
+### DefaultTableModel:
+Es una implementación de la interfaz TableModel en Java que proporciona un modelo de tabla predeterminado.
+Permite almacenar y administrar los datos que se mostrarán en una JTable. Este modelo de tabla permite:
+-Almacenamiento de datos.
+-Control de datos.
+-Gestión de columnas.
+-Actualización de la interfáz gráfica.

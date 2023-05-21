@@ -7,8 +7,8 @@ public class InicioSesion {
     ResultSet resultado = null; // Este atributo recibira el resultado de la consulta que vamos a hacer a la base de datos...
     // ...para verificar las credenciales del usuario.
 
-    public boolean validarUsuario (String usuario) throws Exception{ // Método por el cual vamos a veriricar las credenciales introducidas por el ususario.
-        String query = "SELECT estado FROM usuarios WHERE nombre_usuario = '"+usuario+"'";
+    public boolean validarUsuario (String email) throws Exception{ // Método por el cual vamos a veriricar las credenciales introducidas por el ususario.
+        String query = "SELECT estado FROM profesores WHERE email = '"+email+"'";
         try{
             resultado = conexion.consultarBD(query);//Le damos al objeto conexion la consulta a través del método consultar de la clase cslConexion.
             // y este resultado se lo asignamos a la variables "resultado".
@@ -24,7 +24,7 @@ public class InicioSesion {
     }
 
     public boolean validarContraseña (String contraseña) throws Exception{ // Método por el cual vamos a veriricar las credenciales introducidas por el ususario.
-        String query = "SELECT estado FROM usuarios WHERE contraseña = '"+contraseña+"'";
+        String query = "SELECT estado FROM profesores WHERE contraseña = '"+contraseña+"'";
         try{
             resultado = conexion.consultarBD(query);//Le damos al objeto conexion la consulta a través del método consultar de la clase cslConexion.
             // y este resultado se lo asignamos a la variables "resultado".

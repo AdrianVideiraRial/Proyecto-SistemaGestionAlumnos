@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="CapaPresentacion.VentanaPrincipal">
+  <grid id="27dc6" binding="panelPrincipal" layout-manager="GridLayoutManager" row-count="15" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="5" left="5" bottom="5" right="5"/>
+    <constraints>
+      <xy x="20" y="20" width="720" height="684"/>
+    </constraints>
+    <properties>
+      <font name="Segoe UI" style="0"/>
+    </properties>
+    <border type="line" title="">
+      <color color="-12961219"/>
+    </border>
+    <children>
+      <component id="3f608" class="javax.swing.JButton" binding="calificacionesButton" default-binding="true">
+        <constraints>
+          <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <borderPainted value="true"/>
+          <contentAreaFilled value="true"/>
+          <defaultCapable value="false"/>
+          <doubleBuffered value="false"/>
+          <enabled value="true"/>
+          <font name="Segoe UI" style="0"/>
+          <text value="Calificaciones"/>
+        </properties>
+      </component>
+      <component id="23ab4" class="javax.swing.JButton" binding="tutoríaButton" default-binding="true">
+        <constraints>
+          <grid row="10" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Segoe UI" style="0"/>
+          <text value="Tutoría"/>
+        </properties>
+      </component>
+      <component id="d6813" class="javax.swing.JButton" binding="justificarButton" default-binding="true">
+        <constraints>
+          <grid row="11" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Segoe UI" style="0"/>
+          <text value="Justificar"/>
+        </properties>
+      </component>
+      <component id="fd8ed" class="javax.swing.JButton" binding="informesButton" default-binding="true">
+        <constraints>
+          <grid row="12" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Segoe UI" style="0"/>
+          <text value="Informes"/>
+        </properties>
+      </component>
+      <hspacer id="2fdba">
+        <constraints>
+          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <hspacer id="64c63">
+        <constraints>
+          <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <component id="a8679" class="javax.swing.JButton" binding="Salir">
+        <constraints>
+          <grid row="13" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Segoe UI" style="0"/>
+          <text value="Salir"/>
+        </properties>
+      </component>
+      <vspacer id="14bda">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <vspacer id="bc16d">
+        <constraints>
+          <grid row="14" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <component id="ba8be" class="javax.swing.JLabel" binding="LogoUsuario">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <icon value="img/Menu.png"/>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="4c2b7" class="javax.swing.JComboBox" binding="comboBox1" default-binding="true">
+        <constraints>
+          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Segoe UI" style="0"/>
+          <model>
+            <item value="Mis datos"/>
+            <item value="Información personal"/>
+            <item value="Informacion de la cuenta"/>
+          </model>
+        </properties>
+      </component>
+      <component id="6894" class="javax.swing.JComboBox" binding="comboBox2" default-binding="true">
+        <constraints>
+          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Segoe UI" style="0"/>
+          <model>
+            <item value="Mis mensasjes"/>
+            <item value="Mi correo"/>
+            <item value="Favoritos"/>
+          </model>
+        </properties>
+      </component>
+      <vspacer id="ba6d3">
+        <constraints>
+          <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <vspacer id="a48ff">
+        <constraints>
+          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <component id="98dab" class="javax.swing.JButton" binding="pasarListaButton" default-binding="true">
+        <constraints>
+          <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Segoe UI" style="0"/>
+          <text value="Pasar lista"/>
+        </properties>
+      </component>
+      <component id="fa0d9" class="javax.swing.JButton" binding="registrosButton" default-binding="true">
+        <constraints>
+          <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Segoe UI" style="0"/>
+          <text value="Registros"/>
+        </properties>
+      </component>
+      <component id="c4ea5" class="javax.swing.JLabel" binding="titulo">
+        <constraints>
+          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Segoe UI Black" size="16" style="1"/>
+          <text value="MENU PRINCIPAL"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
