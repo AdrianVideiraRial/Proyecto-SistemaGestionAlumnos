@@ -17,7 +17,7 @@ public class VentanaPrincipal extends JFrame{
     private JLabel LogoUsuario;
     private JComboBox comboBox1; //Desplegable con datos personales.
     private JComboBox comboBox2; //Desplegable con mensajes.
-    private JButton pasarListaButton;
+    private JButton bajasButton;
     private JLabel titulo;
     private JFrame framePrincipal;
 
@@ -57,6 +57,15 @@ public class VentanaPrincipal extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 new VentanaRegistros();
+            }
+        });
+
+        //BOTÓN BAJAS (Lógica).
+        bajasButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new VentanaBajas();
+
             }
         });
     }

@@ -123,6 +123,8 @@ public class VentanaRegistros {
                 textTelefono.setText("");
             }
         });
+
+        //BOTÓN SALIR (Lógica).
         salirButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

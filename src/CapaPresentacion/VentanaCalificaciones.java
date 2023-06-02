@@ -1,7 +1,6 @@
 package CapaPresentacion;
 
 import CapaLogica.Calificaciones;
-
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
@@ -27,7 +26,7 @@ public class VentanaCalificaciones extends JFrame{
         @Override
         public boolean isCellEditable(int row, int column) {
             // Hacemos las columnas "Curso", "Nombre" y "Media" como no editables
-            return !(column == 0 || column == 1 || column == 2  || column == 3 || column == 4 || column == 5 || column == 6);
+            return !(column == 0 || column == 1 || column == 2  ||  column == 6);
         }
     };
     Calificaciones objCalificaciones = new Calificaciones(this);//Creamos un objeto de la clase Calificaciones para poder operar con los métodos de esta clase
@@ -45,9 +44,9 @@ public class VentanaCalificaciones extends JFrame{
         modeloTabla.addColumn("Curso");
         modeloTabla.addColumn("Nombre");
         modeloTabla.addColumn("Apellido");
-        modeloTabla.addColumn("Ex1");
-        modeloTabla.addColumn("Ex2");
-        modeloTabla.addColumn("Ex3");
+        modeloTabla.addColumn("Examen1");
+        modeloTabla.addColumn("Examen2");
+        modeloTabla.addColumn("Examen3");
         modeloTabla.addColumn("Media");
 
         //Agregamos los Items de filtrado.
@@ -100,7 +99,7 @@ public class VentanaCalificaciones extends JFrame{
 
                 try {
                     objCalificaciones.filtrarMateriasPorClase(claseSeleccionada, materiaSeleccionada);
-                    objCalificaciones.mostrarNotas(materiaSeleccionada);//error en el programa.
+                    //objCalificaciones.mostrarNotas(materiaSeleccionada);//error en el programa.
                 } catch (Exception ex) {
                     throw new RuntimeException(ex);
                 }
@@ -112,6 +111,13 @@ public class VentanaCalificaciones extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 frameCalificaciones.setVisible(false);
+            }
+        });
+
+        guardarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                objCalificaciones.actualizarNotas();
             }
         });
     }

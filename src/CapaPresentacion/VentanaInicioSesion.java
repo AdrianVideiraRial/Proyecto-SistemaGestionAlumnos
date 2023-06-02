@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 public class VentanaInicioSesion {
     //Componentes de la interfaz gráfica de usuario (GUI).
     private JPanel panel1; //Panel que contiene los componentes de la ventana.
-    private JTextField textUsuario; //Campo de texto para que el usuario ingrese su nombre de usuario.
+    public JTextField textUsuario; //Campo de texto para que el usuario ingrese su nombre de usuario.
     private JPasswordField PasswordUsuario; //Campo para que se ingrese la contraseña.
     private JButton ingresarButton; //Botón de inicio de sesión.
     private JButton salirButton;

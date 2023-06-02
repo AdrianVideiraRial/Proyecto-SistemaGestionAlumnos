@@ -3,6 +3,7 @@ package CapaLogica;
 import CapaDatos.clsConexion;
 import CapaPresentacion.*;
 
+import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -41,6 +42,7 @@ public class Calificaciones {
         return "";
     }
 
+
     public Object filtrarMateriasPorClase(String clase, String materia) throws Exception{
         //Consulta con nuestro criterio de filtrado.
         String query = "SELECT nombre_clase FROM informacion_general WHERE nombre_clase = '"+clase+"'";
@@ -56,7 +58,7 @@ public class Calificaciones {
 
             while (resultado.next() && resultado2.next() && resultado3.next()) {//Recorremos la tabla usuarios en busca de la credencial introducida por el usuario. Para esto usamos...
                 // ...un bucle WHILE y el método .next() que irá registo por registro de la tabla buscando el nombre escrito por el usuario.
-                //Object[] fila = new Object[12];
+                //Object[] fila = new Object[8];
                 fila[0] = resultado.getString("nombre_clase");
                 fila[1] = resultado2.getString("nombre_alumno");
                 fila[2] = resultado3.getString("apellido_alumno");
@@ -83,12 +85,13 @@ public class Calificaciones {
         try {
             objVentanaCalificaciones.modeloTabla.setRowCount(0);
             resultado4 = conexion.consultarBD(query4);
-            while (resultado.next() && resultado2.next() && resultado3.next() & resultado4.next()) {//Recorremos la tabla usuarios en busca de la credencial introducida por el usuario. Para esto usamos...
+            while (resultado4.next()) {//Recorremos la tabla usuarios en busca de la credencial introducida por el usuario. Para esto usamos...
                 // ...un bucle WHILE y el método .next() que irá registo por registro de la tabla buscando el nombre escrito por el usuario.
                 //Object[] fila = new Object[4];
-                fila[0] = resultado.getString("nombre_clase");
-                fila[1] = resultado2.getString("nombre_alumno");
-                fila[2] = resultado3.getString("apellido_alumno");
+
+                //fila[0] = resultado.getString("nombre_clase");
+                //fila[1] = resultado2.getString("nombre_alumno");
+                //fila[2] = resultado3.getString("apellido_alumno");
                 fila[3] = resultado4.getInt("examen_1");
                 fila[4] = resultado4.getInt("examen_2");
                 fila[5] = resultado4.getInt("examen_3");
@@ -100,6 +103,23 @@ public class Calificaciones {
             //...mostrará el error del try-catch de ese método.
         }
         return "";
+    }
+
+    public void actualizarNotas(){
+        int fila = objVentanaCalificaciones.miTabla.getSelectedRow(); //Obtenemos el número de la fila seleccionada.
+
+        int id = Integer.parseInt(this.objVentanaCalificaciones.miTabla.getValueAt(fila,3).toString());
+        String examen1 = objVentanaCalificaciones.miTabla.getValueAt(fila,3).toString();
+        String examen2 = objVentanaCalificaciones.miTabla.getValueAt(fila,4).toString();
+        String examen3 = objVentanaCalificaciones.miTabla.getValueAt(fila,5).toString();
+
+        String query = "INSERT INTO informacion_general VALUES(examen_1 ='"+examen1+"', examen_2='"+examen2+"', examen_3='"+examen3+"' WHERE id = identificador_general)";
+        try {
+            conexion.ejecutarBD(query);
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null,"No se pudo actualizar");
+        }
+
     }
 
 }

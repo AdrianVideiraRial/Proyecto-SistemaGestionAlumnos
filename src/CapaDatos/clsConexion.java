@@ -1,4 +1,5 @@
 package CapaDatos;
+import javax.swing.*;
 import javax.xml.transform.Result;
 import java.sql.*;
 
