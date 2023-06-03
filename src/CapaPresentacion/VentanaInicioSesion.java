@@ -8,7 +8,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class VentanaInicioSesion {
-    //Componentes de la interfaz gráfica de usuario (GUI).
+     /**
+     * Componentes de la ventana
+      * @author Adrian Videira
+     */
     private JPanel panel1; //Panel que contiene los componentes de la ventana.
     public JTextField textUsuario; //Campo de texto para que el usuario ingrese su nombre de usuario.
     private JPasswordField PasswordUsuario; //Campo para que se ingrese la contraseña.
@@ -18,8 +21,10 @@ public class VentanaInicioSesion {
     InicioSesion objInicioSesion = new InicioSesion(); // Creamos un objeto de la clase Inicio sesión fuera de los métodos para que podamos usarlo...
     //...si necesidad de tener que estar intanciandolo en cada método. Desde aquí usando este objeeto podremos llamar a los métodos que necesitemos en el futuro.
 
-
-    //Constructor del objeto de la ventana inicio de sesión.
+    /**
+     * Constructor.
+     * @author Adrian Videira
+     */
     public VentanaInicioSesion() {
         frame = new JFrame("Inicio sesión"); //Creamos un objeto JFrame (una ventana genérica vacía) con el título "Inicio sesión".
         frame.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE); //Se establece la operación de cierre cuando se cierre la ventana.
@@ -31,7 +36,7 @@ public class VentanaInicioSesion {
         frame.setVisible(true); // Hacemos visible la ventana en la pantalla.
 
 
-        //Boton INGRESAR. (Lógica).
+        //Boton ingresar (Lógica).
         ingresarButton.addActionListener(new ActionListener() { // Le damos vida al boton del panel de inicio de sesión.
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -82,7 +87,7 @@ public class VentanaInicioSesion {
             }
         });
 
-        //Boton SALIR. (Lógica).
+        //Boton salir. (Lógica).
         salirButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -91,7 +96,9 @@ public class VentanaInicioSesion {
         });
     }
 
-    //Main para testar la ventana.
+    /**
+     * Main para testar ventana.
+     */
     public static void main(String[] args) {
         new VentanaInicioSesion();
     }

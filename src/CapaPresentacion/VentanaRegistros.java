@@ -13,6 +13,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class VentanaRegistros {
+    /**
+     * Componentes de la ventan.
+     * @author Adrian Videira
+     */
     private JPanel panelSuperior;
     private JPanel panelCentral;
     private JPanel panelInferior;
@@ -31,9 +35,12 @@ public class VentanaRegistros {
     private JFrame framePrincipal;
     Registros objRegistros = new Registros();
 
-
+    /**
+     * Constructor
+     * @author Adrian Videira
+     */
     public VentanaRegistros(){
-        framePrincipal = new JFrame("Registro alumnos"); //Creamos un objeto JFrame (una ventana genérica vacía) con el título "Menú principal".
+        framePrincipal = new JFrame("Registro alumnos"); //Creamos un objeto JFrame (una ventana genérica vacía) con el título "Registro alumnos".
         framePrincipal.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE); //Se establece la operación de cierre cuando se cierre la ventana.
         framePrincipal.setPreferredSize(new Dimension(500,500)); //Definimos el tamaño de la vetana
         framePrincipal.setResizable(false); //Definimos que sea fijo su tamaño.
@@ -42,7 +49,7 @@ public class VentanaRegistros {
         framePrincipal.setLocationRelativeTo(null); // Se establece ubicación de la ventana en el centro de la pantalla.
         framePrincipal.setVisible(true); // Hacemos visible la ventana en la pantalla.
 
-        //BOTÓN REGISTRAR. (Lógica).
+        //BOTÓN registrar. (Lógica).
         registrarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -50,11 +57,6 @@ public class VentanaRegistros {
                 if(textDNI.getText().isEmpty()){
                     JOptionPane.showMessageDialog(textDNI, "Por favor, ingrese DNI");
                 }
-                /*String patronDNI = ("\\d{8}"); //Creamos un patrón con el formato que queremos que tenga el DNI
-                if(!textDNI.getText().matches(patronDNI)){ //En caso de que no se cumpla, enviamos un mensaje al usuario.
-                    JOptionPane.showMessageDialog(textDNI,"Debe tener 8 digitos");
-                }*/
-
                 if(textNombre.getText().isEmpty()){
                     JOptionPane.showMessageDialog(textNombre, "Por favor, ingrese nombre");
                 }
@@ -110,8 +112,7 @@ public class VentanaRegistros {
             }
         });
 
-
-        //BOTÓN CANCELAR (Lógica).
+        //BOTÓN cancelar (Lógica).
         cancelarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -124,7 +125,7 @@ public class VentanaRegistros {
             }
         });
 
-        //BOTÓN SALIR (Lógica).
+        //BOTÓN salir (Lógica).
         salirButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -133,8 +134,9 @@ public class VentanaRegistros {
         });
     }
 
-
-
+    /**
+     * Main para testar ventana.
+     */
     public static void main(String[] args) {
         new VentanaRegistros();
     }

@@ -2,11 +2,27 @@ package CapaLogica;
 import CapaDatos.*;
 import java.sql.ResultSet;
 
+/**
+ * Atributos
+ * @author Adrian Videira
+ */
 public class InicioSesion {
+    /**
+     * Constructor
+     * @author Adrian Videira
+     */
     clsConexion conexion = new clsConexion(); //Creamos un objeto para generar la conexión de la clase clsConexion.
     ResultSet resultado = null; // Este atributo recibira el resultado de la consulta que vamos a hacer a la base de datos...
     // ...para verificar las credenciales del usuario.
 
+
+    /**
+     * @use Método por el cual vamos a veriricar el mail introducido por el ususario.
+     * @param email
+     * @return
+     * @throws Exception
+     * @author Adrian Videira
+     */
     public boolean validarUsuario (String email) throws Exception{ // Método por el cual vamos a veriricar las credenciales introducidas por el ususario.
         String query = "SELECT estado FROM profesores WHERE email = '"+email+"'";
         try{
@@ -23,6 +39,13 @@ public class InicioSesion {
         return false;
     }
 
+    /**
+     * @use Método por el cual vamos a veriricar la contraseña introducida por el ususario.
+     * @param contraseña
+     * @return
+     * @throws Exception
+     * @author Adrian Videira
+     */
     public boolean validarContraseña (String contraseña) throws Exception{ // Método por el cual vamos a veriricar las credenciales introducidas por el ususario.
         String query = "SELECT estado FROM profesores WHERE contraseña = '"+contraseña+"'";
         try{

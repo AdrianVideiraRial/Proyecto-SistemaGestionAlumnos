@@ -8,7 +8,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class VentanaCalificaciones extends JFrame{
-    //Componentes de la interfaz gráfica de usuario (GUI).
+
+    /**
+     * Componentes de la ventana.
+     * @author Adrian Videira
+     */
     private JPanel panelCalificaciones;
     public JComboBox comboClases;
     public JComboBox comboMaterias;
@@ -32,13 +36,14 @@ public class VentanaCalificaciones extends JFrame{
     Calificaciones objCalificaciones = new Calificaciones(this);//Creamos un objeto de la clase Calificaciones para poder operar con los métodos de esta clase
     // y poder generar la lógica para implementar en los JComboBox.
 
-    //Constructor del objeto de la ventana Calificaciones.
+    /**
+     * Constructor.
+     * @author Adrian Videira
+     */
     public VentanaCalificaciones(){
         frameCalificaciones = new JFrame("Calificaciones");
         frameCalificaciones.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frameCalificaciones.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE); //Se establece la operación de cierre cuando se cierre la ventana.
-        //frameCalificaciones.setPreferredSize(new Dimension(1000, 1000)); // Se establece un tamaño.
-        //frameCalificaciones.setResizable(true); // Se deshabilita la posibilidad de redimensionar la ventana.
 
         //Agregamos las columnas que queremos que tenga la tabla al modelo creado en nuestra Clase.
         modeloTabla.addColumn("Curso");
@@ -106,7 +111,7 @@ public class VentanaCalificaciones extends JFrame{
             }
         });
 
-
+        //BOTÓN cancelar (Lógica).
         cancelarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -114,6 +119,7 @@ public class VentanaCalificaciones extends JFrame{
             }
         });
 
+        //BOTÓN guardar (Lógica).
         guardarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -122,7 +128,9 @@ public class VentanaCalificaciones extends JFrame{
         });
     }
 
-
+    /**
+     * Main para testar ventana.
+     */
     public static void main(String[] args) {
         new VentanaCalificaciones();
     }

@@ -9,6 +9,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class VentanaBajas {
+    /**
+     * Componentes de la ventana.
+     * @author Adrian Videira
+     */
     private JPanel panelSuperior;
     private JPanel panelInferior;
     private JLabel DNI;
@@ -20,10 +24,14 @@ public class VentanaBajas {
     private JButton salirButton;
     private JPanel panelGeneral;
     private JFrame framePrincipal;
-    Bajas objBajas = new Bajas();
+    Bajas objBajas = new Bajas(); // Creamos objeto de la clase Bajas para acceder a sus métodos.
 
+    /**
+     * Constructores
+     * @author Adrian Videira
+     */
     public VentanaBajas() {
-        framePrincipal = new JFrame("Bajas alumnos"); //Creamos un objeto JFrame (una ventana genérica vacía) con el título "Menú principal".
+        framePrincipal = new JFrame("Bajas alumnos"); //Creamos un objeto JFrame (una ventana genérica vacía) con el título "Baja Alumnos".
         framePrincipal.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE); //Se establece la operación de cierre cuando se cierre la ventana.
         framePrincipal.setPreferredSize(new Dimension(300,300)); //Definimos el tamaño de la vetana
         framePrincipal.setResizable(false); //Definimos que sea fijo su tamaño.
@@ -82,6 +90,9 @@ public class VentanaBajas {
         });
     }
 
+    /**
+     * Main para testar ventana.
+     */
     public static void main(String[] args) {
         new VentanaBajas();
     }

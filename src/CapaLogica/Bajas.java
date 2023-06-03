@@ -2,10 +2,20 @@ package CapaLogica;
 
 import CapaDatos.clsConexion;
 public class Bajas {
-    //Atributos.
+
+    /**
+     * Atributos.
+     * @author Adrian Videira
+     */
     clsConexion conexion = new clsConexion();
 
-    //Método que se usará para dar de baja a un alumno en la tabla alumnos de la base de datos.
+
+    /**
+     * @use Método que se usará para dar de baja a un alumno en la tabla alumnos de la base de datos.
+     * @use Ejecuta una sentencia en la tabla alumnos de la base de datos.
+     * @param dni
+     * @author Adrian Videira
+     */
     public String ejecutarBaja(String dni) {
         String query = "DELETE FROM public.alumnos\n" +
                 "WHERE dni ='"+dni+"'";

@@ -6,7 +6,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class VentanaPrincipal extends JFrame{
-    //Componentes de la interfaz gráfica de usuario (GUI).
+    /**
+     * Componentes de la ventana.
+     * @author Adrian Videira
+     */
     private JPanel panelPrincipal;//Panel que contiene los componentes de la ventana.
     private JButton calificacionesButton; //Botón que nos dá acceso a la ventana de calificaciones.
     private JButton registrosButton; //Botón que nos dá acceso a la ventana de pasar lista.
@@ -21,8 +24,10 @@ public class VentanaPrincipal extends JFrame{
     private JLabel titulo;
     private JFrame framePrincipal;
 
-
-
+    /**
+     * Constructor.
+     * @author Adrian Videira
+     */
     public VentanaPrincipal(){
         framePrincipal = new JFrame("Menú principal"); //Creamos un objeto JFrame (una ventana genérica vacía) con el título "Menú principal".
         framePrincipal.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE); //Se establece la operación de cierre cuando se cierre la ventana.
@@ -33,10 +38,7 @@ public class VentanaPrincipal extends JFrame{
         framePrincipal.setLocationRelativeTo(null); // Se establece ubicación de la ventana en el centro de la pantalla.
         framePrincipal.setVisible(true); // Hacemos visible la ventana en la pantalla.
 
-
-
-
-        //BOTÓN SALIR. (Lógica).
+        //BOTÓN salir. (Lógica).
         Salir.addActionListener(new ActionListener() { //Le damos vida al botón salir.
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -44,7 +46,7 @@ public class VentanaPrincipal extends JFrame{
             }
         });
 
-        //BOTÓN CALIFICACIONES. (Lógica).
+        //BOTÓN calificaciones. (Lógica).
         calificacionesButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -52,7 +54,7 @@ public class VentanaPrincipal extends JFrame{
             }
         });
 
-        //BOTÓN REGISTROS. (Lógica).
+        //BOTÓN registros. (Lógica).
         registrosButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -60,7 +62,7 @@ public class VentanaPrincipal extends JFrame{
             }
         });
 
-        //BOTÓN BAJAS (Lógica).
+        //BOTÓN bajas (Lógica).
         bajasButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -70,13 +72,9 @@ public class VentanaPrincipal extends JFrame{
         });
     }
 
-    //Método para generar una ventana principal
-    public Object getVentanaPrincipal(){
-        return new VentanaPrincipal();
-    }
-
-
-
+    /**
+     * Main para testar ventana.
+     */
     public static void main(String[] args) {
         new VentanaPrincipal();
     }

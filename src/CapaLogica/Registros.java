@@ -4,10 +4,24 @@ import CapaDatos.clsConexion;
 
 
 public class Registros {
-    //Atributos.
+
+    /**
+     * Atributos.
+     * @author Adrian Videira
+     */
     clsConexion conexion = new clsConexion();
 
-    //Método que se usará para hacer un insert en la tabla alumnos.
+
+    /**
+     * @use Método que se usará para hacer un insert en la tabla alumnos.
+     * @param dni
+     * @param nombre
+     * @param apellido
+     * @param fechaNacimiento
+     * @param direccion
+     * @param telefono
+     * @author Adrian Videira
+     */
     public String ejecutarRegistro(String dni, String nombre, String apellido, String fechaNacimiento, String direccion, String telefono){
         //Generamos la petición para insertar los datos que hay escrito el usuario.
         //Los datos se guardaran en cada una de las variables.(Estas instrucciónes se harán dentro del botonRegistrar.

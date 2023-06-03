@@ -5,7 +5,9 @@ import java.sql.*;
 
 public class clsConexion { //En esta clase crearemos la conexion con la base de datos Postgres y nos comunicaremos con ella.
 
-    //Atributos de la clase.
+    /**
+     * Atributos de la clase.
+     */
     public String usuario; // Usuario Postgres.
     public String contrasena; // Contraseña al instalar Postgres.
     public String url; // Ruta de la base de datos.
@@ -13,7 +15,10 @@ public class clsConexion { //En esta clase crearemos la conexion con la base de 
     public Connection conexion; // Objeto que funciona de receptor de la conexion entre Java y PostgreSQL.
     public PreparedStatement pt; // Objeto a través del cual se preparan las consultas SQL.
 
-    //Constructor para crear objetos tipo conexión.
+    /**
+     *  @use Constructor para crear objetos tipo conexión.
+     *  @author Adrian Videira
+     */
     public clsConexion(){ // Objeto en el que predefinimos los datos necesarios para establecer la conexión.
         usuario = "postgres"; // Usuario por defecto en PostgreSQL
         contrasena = "adrian"; // Contraseña para acceder a PostgreSQL
@@ -22,7 +27,10 @@ public class clsConexion { //En esta clase crearemos la conexion con la base de 
         conexion = null;
     }
 
-    //Método para conectarnos a la BD.
+    /**
+     * @use Método para conectarnos a la BD.
+     * @author Adrian Videira
+     */
     public void conectarBD(){
         try {
             //Generamos la conexion usando la interfaz Connection y la clase DriverManager donde le damos los datos necesario para la conexión.
@@ -35,7 +43,11 @@ public class clsConexion { //En esta clase crearemos la conexion con la base de 
         }
     }
 
-    //Método para desconectarse de la BD.
+
+    /**
+     * @use Método para desconectarse de la BD.
+     * @author Adrian Videira
+     */
     public void desconectarBD(){
         try{
             conexion.close(); // Usamos el metodo .close() de la clase Connection en nuestro objeto "conexion" para desconectarnos de la BD.
@@ -45,7 +57,13 @@ public class clsConexion { //En esta clase crearemos la conexion con la base de 
         }
     }
 
-    //Método para consultarle a la BD.
+
+    /**
+     * @use Método para consultarle a la BD.
+     * @param sentencia
+     * @throws Exception
+     * @author Adrian Videira
+     */
     public ResultSet consultarBD(String sentencia) throws Exception {//La Interfaz ResultSet nos permite movernos por las tablas de la BD.
         try { //throws Exception: indica que este método debe manejar errores de la clase Exception.
             conectarBD(); // Nos conectamos a la base de datos para poder hacer la consulta con el método que hemos creado.
@@ -59,7 +77,14 @@ public class clsConexion { //En esta clase crearemos la conexion con la base de 
         }
     }
 
-    //Método para operaciones CRUD de la BD.
+
+
+    /**
+     * @use Método para operaciones CRUD de la BD.
+     * @param sentencia
+     * @throws Exception
+     * @author Adrian Videira
+     */
     public void ejecutarBD(String sentencia) throws Exception { // Hacemos este método void ya que no necesitamos retornar nada, solo queremos manipular la BD.
         try{ //throws Exception: indica que este método debe manejar errores de la clase Exception.
             conectarBD(); // Nos conectamos a la base de datos para poder hacer la consulta con el método que hemos creado.
@@ -71,14 +96,6 @@ public class clsConexion { //En esta clase crearemos la conexion con la base de 
             conexion.close(); // Cerramos la conexión en PostgreSQL.(Optimizamos los recursos del sitema).
         }
     }
-
-
-
-
-
-
-
-
 
 
 }
