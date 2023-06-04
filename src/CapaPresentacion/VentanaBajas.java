@@ -53,18 +53,28 @@ public class VentanaBajas {
                         JOptionPane.showMessageDialog(textDNI, "El DNI debe tener 8 digitos");
                     }
                     else{
+                        /**
+                         * @author Adrian Videira.
+                         * @date 2023/06/04.
+                         * @revision 0.1
+                         * Se incorpora el uso del método para verifica que el DNI introducido existe.
+                         */
                         try{
                             //Obtenemos los datos introducidos por el ususario para luego darselos al método ejecutarBaja.
                             String dni = textDNI.getText();
-
-                            //Ejecutamos la orden.
-                            objBajas.ejecutarBaja(dni);
-
-                            //Mensaje que confirma que el borrado ha sido realizado.
-                            JOptionPane.showMessageDialog(eliminarButton,"Registro realizado con éxito");
+                            //Verificamos que ese DNI existe en la base de datos.
+                            if(!objBajas.validarDNI(dni).matches(textDNI.getText())){
+                                JOptionPane.showMessageDialog(eliminarButton,"No existe ese DNI en la base de datos");
+                            }else{
+                                //Ejecutamos la orden.
+                                objBajas.ejecutarBaja(dni);
+                                //Mensaje que confirma que el borrado ha sido realizado.
+                                JOptionPane.showMessageDialog(eliminarButton,"Baja realizada con éxito");
+                            }
 
                         }catch (Exception ex){
                             System.out.println(ex.getMessage());
+                            JOptionPane.showMessageDialog(eliminarButton, "Ha ocurrido un error");
                         }
                     }
                 }
@@ -77,8 +87,6 @@ public class VentanaBajas {
             @Override
             public void actionPerformed(ActionEvent e) {
                 textDNI.setText("");
-                textNombre.setText("");
-                textApellido.setText("");
             }
         });
         //BOTÓN SALIR (Lógica).

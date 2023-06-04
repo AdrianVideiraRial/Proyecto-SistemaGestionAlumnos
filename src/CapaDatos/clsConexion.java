@@ -64,7 +64,7 @@ public class clsConexion { //En esta clase crearemos la conexion con la base de 
      * @throws Exception
      * @author Adrian Videira
      */
-    public ResultSet consultarBD(String sentencia) throws Exception {//La Interfaz ResultSet nos permite movernos por las tablas de la BD.
+    public ResultSet consultarBD(String sentencia) throws Exception {
         try { //throws Exception: indica que este método debe manejar errores de la clase Exception.
             conectarBD(); // Nos conectamos a la base de datos para poder hacer la consulta con el método que hemos creado.
             pt = conexion.prepareStatement(sentencia); // Usamos el Objeto de la interfaz PreparedStatement para realizar la consulta.

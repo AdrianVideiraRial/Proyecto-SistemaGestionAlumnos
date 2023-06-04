@@ -85,7 +85,13 @@ public class VentanaRegistros {
                     if(!textTelefono.getText().matches(patronTelefono)){ //En caso de que no se cumpla, enviamos un mensaje al usuario.
                         JOptionPane.showMessageDialog(textTelefono,"El telefono debe tener 9 digitos");
                     }
-                    else{
+                    /**
+                     * @author Adrian Videira.
+                     * @date 2023/06/04.
+                     * @revision 0.1
+                     * Mejora realizada en el if, para que solo muestre el mensaje de "Registro realizado con éxito" si se cumplen los formatos de los textos declarados previamente.
+                     */
+                    if (textFechaNacimiento.getText().matches(patronFecha) && textDNI.getText().matches(patronDNI) && textTelefono.getText().matches(patronTelefono)) {
                         try{
                             //Obtenemos los datos introducidos por el ususario para luego darselos al método ejecutarRegistro.
                             String dni = textDNI.getText();
